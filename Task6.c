@@ -13,7 +13,7 @@ int main () {
     scanf("%d", &num);
 
     struct item arr[100];
-    struct item *arr;
+    struct item *arr2 = arr;
     char search[50];
 
     for (int i = 0; i < num; i++) {
@@ -35,4 +35,13 @@ int main () {
     printf("Enter the minimum quantity to search \n");
     scanf("%d", &min);
 
+    for (int i = 0; i < num; i++) {
+        if (strcmp(arr2[i].category, search) == 0 && arr2[i].quantity >= min) {
+            printf("%s , %s , %d\n",
+                   arr2[i].name,
+                   arr2[i].category,
+                   arr2[i].quantity);
+        }
+    }
+return 0;
 }
